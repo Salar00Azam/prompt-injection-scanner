@@ -1,0 +1,27 @@
+# Scan output
+report_*.json
+report_*.md
+report_*.html
+comparison_*.md
+.state_*.json
+
+# Secrets - never commit these
+.env
+*.key
+system_prompt.txt
+real_system_prompt.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

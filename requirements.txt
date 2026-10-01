@@ -1,0 +1,7 @@
+# Core (needed for local models and custom/OpenAI-compatible endpoints)
+requests>=2.31
+tqdm>=4.66
+
+# Optional cloud SDKs - install only the ones you use
+openai>=1.40
+anthropic>=0.34

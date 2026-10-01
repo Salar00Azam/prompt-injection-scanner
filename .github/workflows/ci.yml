@@ -1,0 +1,38 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt ruff
+      - name: Validate payloads.json
+        run: python -m json.tool payloads.json > /dev/null
+      - name: Compile
+        run: python -m py_compile scanner.py
+      - name: Smoke test (no API key needed)
+        run: python scanner.py --list-categories
+      - name: Lint
+        run: ruff check scanner.py
+        continue-on-error: true
+
+  # Optional: run a real scan in CI against a model.
+  # Needs an OPENAI_API_KEY secret in the repo settings, so it is left disabled.
+  #
+  # scan:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-python@v5
+  #       with:
+  #         python-version: "3.12"
+  #     - run: pip install -r requirements.txt
+  #     - run: python scanner.py --provider openai --model gpt-4o-mini --fail-on high
+  #       env:
+  #         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
