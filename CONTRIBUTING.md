@@ -21,7 +21,7 @@ Add an object to the right category in `payloads.json`:
 
 - Keep `id` prefixes consistent with the category (`DI-`, `II-`, `SP-`, ...).
 - Use a unique canary string (for example `INJECTION_SUCCESS_DI013`) so the
-  detector can confirm a hit.
+  detector can flag a hit.
 - Set `severity` to one of `critical`, `high`, `medium`, `low`.
 - For multi-turn attacks, set `"multi_turn": true` and provide a
   `payloads_sequence` list instead of `payload`.
