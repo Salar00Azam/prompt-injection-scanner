@@ -4,7 +4,7 @@
 ![CI](https://github.com/Salar00azam/prompt-injection-scanner/actions/workflows/ci.yml/badge.svg)
 
 A small command-line tool that throws a set of prompt-injection payloads at an
-LLM endpoint and tells you which ones got through. Useful for checking a chatbot,
+LLM endpoint and flags which ones appear to have got through. Useful for checking a chatbot,
 RAG pipeline, or agent before it ships.
 
 Payloads are organised by the [OWASP Top 10 for LLM Applications 2025](https://owasp.org/www-project-top-10-for-large-language-model-applications/).
