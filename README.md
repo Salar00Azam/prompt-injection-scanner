@@ -1,5 +1,8 @@
 # prompt-injection-scanner
 
+
+![CI](https://github.com/Salar00azam/prompt-injection-scanner/actions/workflows/ci.yml/badge.svg)
+
 A small command-line tool that throws a set of prompt-injection payloads at an
 LLM endpoint and tells you which ones got through. Useful for checking a chatbot,
 RAG pipeline, or agent before it ships.
